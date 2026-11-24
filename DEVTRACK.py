@@ -48,7 +48,7 @@ def menu_Cursos(cursor, conn):
               (nombre_curso, "0", fecha_inicio, "No iniciado")
               )
          conn.commit()
-         print("Curso agregado de nazi")
+         print("Curso agregado")
 
 def menu_proyectos(cursor, conn):
     print("\n [Proyectos]")
@@ -82,7 +82,7 @@ def menu_proyectos(cursor, conn):
          (nombre_curso, "0", fecha_inicio, "No iniciado")
          )
         conn.commit()
-        print("Curso agregado de nazi")
+        print("Proyecto agregado")
 
 
 def menu_objetivos(cursor, conn):
