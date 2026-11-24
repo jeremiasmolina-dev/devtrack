@@ -2,13 +2,13 @@
 Proyecto personal en desarrollo para practicar Python y SQL. La idea es una app de consola para hacer seguimiento de mis cursos, proyectos y objetivos.
 
 ## Estado actual
-En desarrollo. Por ahora está hecho:
-- Diseño de la base de datos en MySQL
-- Conexión desde Python con mysql-connector-python
+- Diseño de la base de datos,
+- conexión desde Python
+- Menú interactivo
+- ver/agregar/actualizar en cursos, proyectos y objetivos.
 
 ## Próximos pasos
-- Menú interactivo
-- Alta y modificación de registros
+- Validación de entradas.
 - Estadísticas de progreso
 
 ## Base de datos
