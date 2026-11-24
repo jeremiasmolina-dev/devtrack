@@ -4,18 +4,11 @@ from datetime import date
 def connect_db():
     conn = mysql.connector.connect(
         host="localhost",
-        user="jere",          # your MySQL username
-        password="jeremiasmolina10",  # your MySQL password
+        user="NAME",        
+        password="PASSWORD", 
         database="devtrack"
     )
     return conn
-
-# Dentro de connect_db(), conn es una variable local — solo existe mientras la función corre.
-# return conn la "saca" de la función y la pasa como resultado.
-
-# conn = connect_db()      # conn = la conexión abierta hacia MySQL
-# cursor = conn.cursor()   # cursor = el que EJECUTA los comandos SQL usando esa conexión
-
 
 def menudev():
     print("[1] Cursos")
@@ -33,7 +26,7 @@ def menu_Cursos(cursor, conn):
 
     if sub == "1":
             cursor.execute("SELECT id, nombre, progreso, fecha_inicio, estado FROM cursos;")
-            for row in cursor.fetchall(): #cursor.fetchall() trae todas las filas que devolvió el SELECT
+            for row in cursor.fetchall(): 
                  print(row)
     elif sub == "2":
          id_curso = input("ID del curso a actualizar: ")
@@ -43,13 +36,13 @@ def menu_Cursos(cursor, conn):
               "UPDATE cursos SET progreso=%s, estado=%s WHERE id=%s",
               (progreso_curso, estado_curso, id_curso)
          )
-         conn.commit() # conn.commit() guarda permanentemente los cambios que se hicieron (INSERT, UPDATE, DELETE) en la base de datos. IMPORTANTISIMO
+         conn.commit() 
          print("Curso Actualizado.")         
 
     elif sub == "3":
          nombre_curso = input("Ingrese el nombre del nuevo curso: ")
          fecha_inicio = date.today()
-         # acordarse de poner una descripcion para cursos xd
+
          cursor.execute(
               "INSERT INTO cursos (nombre, progreso, fecha_inicio, estado) VALUES (%s, %s, %s, %s)",
               (nombre_curso, "0", fecha_inicio, "No iniciado")
